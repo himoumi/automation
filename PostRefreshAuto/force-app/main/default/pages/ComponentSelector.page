@@ -1,0 +1,560 @@
+<apex:page sidebar="false" lightningStylesheets="true" controller="PackageCreatorController">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="text/javascript">__sfdcSessionId = '{!GETSESSIONID()}';</script>
+        <script src="/soap/ajax/49.0/connection.js"></script>
+        <script src="/soap/ajax/49.0/apex.js"></script>
+        <apex:includeScript value="{!$Resource.CoreAPIJsForce}" />
+        <apex:includeScript value="{!$Resource.MetadataAPIJsForce}" />
+
+        <style>
+            body {
+                background: skyblue !important;
+
+            }
+
+            .filterPanel {
+                width: 90%;
+                margin: 2% 5% 0 5%;
+                padding: 1%;
+                background-color: white;
+                border: solid 1px deepskyblue;
+                border-radius: 5px;
+            }
+
+            .displayDiv {
+                width: 30%;
+                margin: 2% 5% 0 1%;
+                padding: 1%;
+                background-color: white;
+                border: solid 1px deepskyblue;
+                border-radius: 5px;
+            }
+
+            .resultDiv {
+                width: 60%;
+                margin: 2% 1% 0 5%;
+                padding: 1%;
+                background-color: white;
+                border: solid 1px deepskyblue;
+                border-radius: 5px;
+            }
+
+            .headerItem {
+                border-width: 1px 0px;
+                border: black;
+                border-bottom: groove;
+                border-top: groove;
+                padding-left: 1%;
+                line-height: 2rem;
+            }
+
+            .listItem {
+                border-bottom: 1px solid #ededed;
+                line-height: 2rem;
+                padding-left: 1%;
+            }
+
+            li.listItem:hover {
+                background-color: aliceblue;
+            }
+
+            .selectedListItem {
+                background-color: aquamarine;
+            }
+
+            li.selectedListItem:hover {
+                background-color: antiquewhite;
+            }
+
+
+            /*tree styles*/
+
+            ul.tree,
+            ul.tree ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            ul.tree ul {
+                margin-left: 10px;
+            }
+
+            ul.tree li {
+                margin: 0;
+                padding: 0 7px;
+                line-height: 20px;
+                border-left: 1px solid rgb(221, 219, 218);
+                word-break: break-all;
+            }
+
+            ul.tree li:last-child {
+                border-left: none;
+            }
+
+            ul.tree li:before {
+                position: relative;
+                top: -0.3em;
+                height: 1em;
+                width: 12px;
+                color: white;
+                border-bottom: 1px solid rgb(221, 219, 218);
+                content: "";
+                display: inline-block;
+                left: -7px;
+            }
+
+            ul.tree li:last-child:before {
+                border-left: 1px solid rgb(221, 219, 218);
+            }
+        </style>
+    </head>
+
+    <body>
+        <apex:slds />
+        <apex:form id="theForm">
+            <div class="filterPanel slds-grid">
+                <div class="slds-form-element slds-size_1-of-3">
+                    <div class="slds-form-element__control">
+                        <apex:selectList id="theSelect" styleClass="slds-input" multiselect="false" size="1">
+                        </apex:selectList>
+                    </div>
+                </div>
+                <div class="slds-grid slds-size_2-of-3">
+                    <div style="margin-left:1%;">
+                        <span class="slds-button slds-button_neutral" onclick="fetchComponents();return false;">Fetch</span>
+                    </div>
+
+                    <div style="margin-left:5%">
+                        Begin where you left off, upload a xml:
+                        <input type="file" id="fileId" accept=".xml" style="width: 12rem;" />
+                    </div>
+                    <div style="margin-left:1%">
+                        <span class="slds-button slds-button_neutral" onclick="uploadAndReadFile();return false;">Upload</span>
+                    </div>
+                    <div class="slds-grid" style="margin-left: 15%;">
+                        <div style="margin-left:2%">
+                            <span class="slds-button slds-button_text-destructive" onclick="resetEverything();return false;">Reset</span>
+                        </div>
+                        <div style="margin-left:1%;">
+                            <span class="slds-button slds-button_brand" onclick="createPackage();">Done</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display:flex;">
+                <div class="resultDiv" style="display:none;">
+                    <ul id="theAvlList">
+                    </ul>
+                </div>
+                <div class="displayDiv" style="display:none;">
+                </div>
+            </div>
+        </apex:form>
+        <div id="spinnerId" class="demo-only" style="height:6rem;display:none;">
+            <div class="slds-spinner_container">
+                <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function showSpinner() {
+            document.getElementById('spinnerId').style.display = 'block';
+        }
+        function hideSpinner() {
+            document.getElementById('spinnerId').style.display = 'none';
+        }
+        function sortBy(field, reverse, primer) {
+            var key = primer
+                ? function (x) {
+                    return primer(x[field]);
+                }
+                : function (x) {
+                    return x[field];
+                };
+
+            return function (a, b) {
+                a = key(a);
+                b = key(b);
+                return reverse * ((a > b) - (b > a));
+            };
+        }
+        function selectAllToggle(e) {
+            console.log(window.event.target.checked);
+            if (window.event.target.checked) {
+                //add all
+                let allLIs = document.getElementById('theAvlList').querySelectorAll(".listItem");
+                console.log(allLIs);
+                for (let i = 0; i <= allLIs.length; i++) {
+                    let liEl = allLIs[i];
+                    console.log(liEl);
+                    if (liEl != undefined && !liEl.classList.contains('selectedListItem')) {
+                        let checkEl = liEl.querySelector('input');
+                        checkEl.checked = true;
+                        liEl.classList.add("selectedListItem");
+                        let compName = liEl.getAttribute('data-id');
+                        if (selectedCompMap.hasOwnProperty(currentMDSelection)) {
+                            var tempArr = selectedCompMap[currentMDSelection];
+                            tempArr.push(compName);
+                            selectedCompMap[currentMDSelection] = tempArr;
+                        }
+                        else {
+                            var tempArr = [];
+                            tempArr.push(compName);
+                            selectedCompMap[currentMDSelection] = tempArr;
+                        }
+                    }
+                }
+
+            }
+            else {
+                //remove all
+                let allLIs = document.getElementById('theAvlList').querySelectorAll(".listItem");
+                for (let i = 0; i <= allLIs.length; i++) {
+                    let liEl = allLIs[i];
+                    if (liEl != undefined && liEl.classList.contains('selectedListItem')) {
+                        let checkEl = liEl.querySelector('input');
+                        checkEl.checked = false;
+                        liEl.classList.remove("selectedListItem");
+                    }
+                }
+                if (selectedCompMap.hasOwnProperty(currentMDSelection)) {
+                    delete selectedCompMap[currentMDSelection];
+                }
+            }
+            console.log(JSON.stringify(selectedCompMap));
+        }
+        function toggleSelection(e) {
+            console.log(window.event.target.getAttribute('data-id'));
+            console.log(window.event.target.tagName);
+            var compName = window.event.target.getAttribute('data-id');
+            var liEl = window.event.target.tagName == 'LI' ? window.event.target : window.event.target.parentNode;
+            var checkEl = window.event.target.tagName == 'LI' ? window.event.target.querySelector('input') : window.event.target;
+            if (liEl.classList.contains('selectedListItem')) {
+                //remove
+                liEl.classList.remove("selectedListItem");
+                checkEl.checked = false;
+                document.getElementById('headerCheckBox').checked = false;
+                if (selectedCompMap.hasOwnProperty(currentMDSelection)) {
+                    var tempArr = selectedCompMap[currentMDSelection];
+                    tempArr = tempArr.filter(function (value) { return value != compName });
+                    if (tempArr.length == 0) //removed the last item of a type
+                    {
+                        delete selectedCompMap[currentMDSelection];
+                    }
+                    else {
+                        selectedCompMap[currentMDSelection] = tempArr;
+                    }
+
+                }
+            }
+            else {
+                //add
+                liEl.classList.add("selectedListItem");
+                checkEl.checked = true;
+                if (selectedCompMap.hasOwnProperty(currentMDSelection)) {
+                    var tempArr = selectedCompMap[currentMDSelection];
+                    tempArr.push(compName);
+                    selectedCompMap[currentMDSelection] = tempArr;
+                }
+                else {
+                    var tempArr = [];
+                    tempArr.push(compName);
+                    selectedCompMap[currentMDSelection] = tempArr;
+                }
+            }
+
+            console.log(JSON.stringify(selectedCompMap));
+            drawTree();
+        }
+        function drawTree() {
+            let displayDivEl = document.querySelector('.displayDiv')
+            if (Object.keys(selectedCompMap).length == 0) {
+                displayDivEl.innerHTML = '<div style="text-align:center;">No component selected yet!</div>';
+                return;
+            }
+            let innerHTMLStr = '<ul class="tree">';
+            Object.entries(selectedCompMap).forEach(
+                ([key, value]) => {
+                    console.log('key' + key);
+                    console.log('value' + JSON.stringify(value));
+                    innerHTMLStr += '<li>' + key;
+                    innerHTMLStr += '<ul>';
+                    value.forEach((item) => {
+                        innerHTMLStr += '<li>' + item;
+                        innerHTMLStr += '</li>';
+                    });
+                    innerHTMLStr += '</ul>';
+                    innerHTMLStr += '</li>';
+                }
+            );
+            innerHTMLStr += '</ul>';
+            displayDivEl.innerHTML = innerHTMLStr;
+        }
+        function fetchComponents() {
+            showSpinner();
+            const selectedMD = document.getElementById('{!$Component.theForm.theSelect}').value;
+            console.log(selectedMD);
+            if (selectedMD == 'none') {
+                hideSpinner();
+                alert('Please select a component type to fetch');
+                return;
+            }
+            currentMDSelection = selectedMD;
+            const fieldsToFetch = metadataToFieldMap[selectedMD].FieldsToFetch;
+            const methodVar = metadataToFieldMap[selectedMD].Method;
+            const clause = metadataToFieldMap[selectedMD].Clause;
+            const includePckg = metadataToFieldMap[selectedMD].IncludePckg;
+            const displayFormat = metadataToFieldMap[selectedMD].DisplayFormat;
+            let queryStr = '';
+            if (methodVar == 'SOQL' || methodVar == 'ToolingAPI') {
+                queryStr = 'select Id,' + fieldsToFetch + ' from ' + selectedMD;
+                if (clause != undefined && clause != null) {
+                    queryStr += ' WHERE ' + clause;
+                }
+            }
+
+            if (methodVar == 'ToolingAPI') {
+                const reqObj = new XMLHttpRequest();
+                console.log(reqObj);
+                reqObj.open('GET', '/services/data/v49.0/tooling/query/?q=' + queryStr);
+                reqObj.setRequestHeader('Authorization', 'Bearer ' + __sfdcSessionId);
+
+                reqObj.onreadystatechange = function () {
+                    console.log(reqObj.readyState);
+                    console.log(reqObj.status);
+                    console.log(reqObj.responseText);
+                    if (reqObj.readyState == XMLHttpRequest.DONE && reqObj.status == 200) {
+
+                    }
+                }
+                reqObj.send();
+            }
+            else if (methodVar == 'SOQL') {
+                const result = sforce.connection.query(queryStr);
+                const componentList = result.getArray('records');
+                console.log(componentList);
+                componentList.sort(sortBy('FolderName', 1));
+                formatTable(componentList, displayFormat, fieldsToFetch, false, includePckg);
+            }
+            else if (methodVar == 'MetadataAPI') {
+                let conn = new jsforce.Connection({ accessToken: __sfdcSessionId });
+                let types = [{ type: selectedMD }];
+                conn.metadata.list(types, '49.0', function (err, metadata) {
+                    console.log(err);
+                    console.log(includePckg);
+                    console.log(metadata);
+                    console.log(Array.isArray(metadata));
+
+                    let metadataArr = [];
+
+                    if (!Array.isArray(metadata)) {
+                        metadataArr.push(metadata);
+                    }
+                    else {
+                        metadataArr = metadata;
+                    }
+                    metadataArr.sort(sortBy('fullName', 1));
+
+                    formatTable(metadataArr, displayFormat, fieldsToFetch, true, includePckg);
+                });
+            }
+        }
+        function formatTable(records, displayFormat, fieldsToFetch, isMetadata, includePckg) {
+
+            let theAvlListEl = document.getElementById('theAvlList');
+            theAvlListEl.innerHTML = '<li class="headerItem"><input id="headerCheckBox" type="checkbox" onclick="selectAllToggle(this);"/>&nbsp;Component Name</li>';
+            document.querySelector('.resultDiv').style.display = 'block';
+            document.querySelector('.displayDiv').style.display = 'block';
+            let listItemHTML = '';
+            let dispFieldArr = [];
+            if (displayFormat != '') {
+                dispFieldArr = displayFormat.split("/");
+            }
+            else {
+                dispFieldArr.push(fieldsToFetch);
+            }
+            console.log(dispFieldArr);
+            let maxRecords = 100;
+            //if(records.length<100)
+            {
+                maxRecords = records.length;
+            }
+            for (let i = 0; i < maxRecords; i++) {
+                if (isMetadata && includePckg != 'Y' && records[i]['namespacePrefix'] != undefined) {
+                    continue;
+                }
+                let displayText = '';
+                for (let j = 0; j < dispFieldArr.length; j++) {
+                    displayText += (j != 0 ? '/' : '') + records[i][dispFieldArr[j]];
+                }
+                if (Object.keys(selectedCompMap).length > 0 && selectedCompMap.hasOwnProperty(currentMDSelection))//some item in map
+                {
+                    if (checkIfItemPresent(currentMDSelection, displayText)) {
+                        listItemHTML += '<li class="listItem selectedListItem" data-id="' + displayText + '" onclick="toggleSelection(this);"><input type="checkbox" data-id="' + displayText + '" checked="true"/>&nbsp;' + displayText + '</li>'
+                    }
+                    else {
+                        listItemHTML += '<li class="listItem" data-id="' + displayText + '" onclick="toggleSelection(this);"><input type="checkbox" data-id="' + displayText + '"/>&nbsp;' + displayText + '</li>'
+                    }
+                }
+                else {
+                    listItemHTML += '<li class="listItem" data-id="' + displayText + '" onclick="toggleSelection(this);"><input type="checkbox" data-id="' + displayText + '"/>&nbsp;' + displayText + '</li>'
+                }
+
+            }
+            theAvlListEl.innerHTML += listItemHTML;
+            drawTree();
+            hideSpinner();
+        }
+        function checkIfItemPresent(compType, compName) {
+            return selectedCompMap[compType].includes(compName);
+        }
+        function createPackage() {
+            showSpinner();
+            if (Object.keys(selectedCompMap).length == 0) {
+                hideSpinner();
+                alert('Please select one or more components');
+                return;
+            }
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.PackageCreatorController.savePackageInCache}',
+                JSON.stringify(selectedCompMap),
+                uniqueKeyGlobal,
+                function (result, event) {
+                    hideSpinner();
+                    if (event.status) {
+                        if (result.isSuccess) {
+                            uniqueKeyGlobal = result.uniqueKey;
+                            window.open('/apex/PackageXmlViewer?uniqueKey=' + result.uniqueKey);
+                        }
+                        else {
+                            alert(result.errorMsg);
+                        }
+                    } else if (event.type === 'exception') {
+                        console.log(event.message + "-" + event.where + "");
+                    } else {
+                        console.log(event.message);
+                    }
+                },
+                { escape: true }
+            );
+        }
+        function uploadAndReadFile() {
+            if (document.getElementById('fileId').files == undefined || document.getElementById('fileId').files.length == 0) {
+                alert('Please upload a xml file');
+                return;
+            }
+            if (confirm("Warning: This will unselect all your selections!")) {
+                showSpinner();
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    console.log(e.target.result);
+                    var parser = new DOMParser();
+                    var xmlDoc = parser.parseFromString(e.target.result, "text/xml");
+                    console.log(xmlDoc.childNodes);//<package>
+                    if (xmlDoc.childNodes.length != 1 || xmlDoc.childNodes[0].tagName != 'Package') {
+                        hideSpinner();
+                        alert('Invalid XML format: First node should be Package');
+                        return;
+                    }
+                    selectedCompMap = {};
+                    let firstTypeInXML = '';
+                    console.log(xmlDoc.childNodes[0].children);
+                    let pckgEl = xmlDoc.childNodes[0];
+                    for (var j = 0; j < pckgEl.children.length; j++) {
+                        if (pckgEl.children[j].tagName == 'types') {
+                            let typesEl = pckgEl.children[j];
+                            let nameEl = typesEl.getElementsByTagName('name');
+                            let nameText = nameEl[0].innerHTML;
+                            if (firstTypeInXML == '') //only first time
+                            {
+                                firstTypeInXML = nameText;
+                            }
+                            for (var k = 0; k < typesEl.children.length; k++) {
+                                if (typesEl.children[k].tagName == 'members') {
+                                    if (!selectedCompMap.hasOwnProperty(nameEl[0].innerHTML)) {
+                                        selectedCompMap[nameText] = [];
+                                    }
+                                    let compList = selectedCompMap[nameText];
+                                    compList.push(typesEl.children[k].innerHTML);
+                                    selectedCompMap[nameText] = compList;
+                                }
+                            }
+                        }
+                        console.log(selectedCompMap);
+                    }
+                    //load the first type for display
+                    document.getElementById('{!$Component.theForm.theSelect}').value = firstTypeInXML;
+                    fetchComponents();
+                    hideSpinner();
+                    alert('XML is loaded, please continue');
+                }
+                reader.readAsText(document.getElementById('fileId').files[0]);
+            }
+        }
+        function onLoad() {
+            const reqObj = new XMLHttpRequest();
+            console.log(reqObj);
+            reqObj.open('GET', '{!URLFOR($Resource.MetadataJSON)}');
+            reqObj.setRequestHeader('Authorization', 'Bearer ' + __sfdcSessionId);
+
+            reqObj.onreadystatechange = function () {
+                //TODO: handle errors
+                if (reqObj.readyState === 4) {
+                    if (reqObj.status === 200)//success
+                    {
+                        const metadataArr = JSON.parse(reqObj.responseText);
+                        var theSelectEl = document.getElementById('{!$Component.theForm.theSelect}');
+                        theSelectEl.innerHTML = '';
+                        let options = '';
+                        options = '<option value="none">Select component type</option>';
+                        
+                        metadataArr.forEach(item=>{
+                            options += '<option value="'+item.ObjectAPIName+'">'+item.ObjectLabel+'</option>';
+                            metadataToFieldMap[item.ObjectAPIName] =
+                            {
+                                "FieldsToFetch": item.FieldsToFetch,
+                                "Method": item.Method,
+                                "Clause": item.Clause,
+                                "IncludePckg": item.IncludePckg,
+                                "DisplayFormat": item.DisplayFormat
+                            };
+                        });
+                        theSelectEl.innerHTML = options;
+                        console.log(metadataToFieldMap);
+                        hideSpinner();
+                    }
+                }
+            }
+            reqObj.send();
+        }
+        function resetEverything() {
+            selectedCompMap = {};
+            currentMDSelection = '';
+            metadataToFieldMap = {};
+            onLoad();
+            document.getElementById('theAvlList').innerHTML = '';
+            document.querySelector('.displayDiv').innerHTML = '';
+            document.getElementById('fileId').value = null;
+            document.querySelector('.resultDiv').style.display = 'none';
+            document.querySelector('.displayDiv').style.display = 'none';
+        }
+        /*JS loading starts*/
+
+        let metadataToFieldMap = {};
+        let selectedCompMap = {};
+        let currentMDSelection = '';
+        let uniqueKeyGlobal = null;
+        showSpinner();
+        onLoad();
+    </script>
+
+    </html>
+</apex:page>

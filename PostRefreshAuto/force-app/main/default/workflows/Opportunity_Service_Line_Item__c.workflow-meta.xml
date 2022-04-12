@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    <outboundMessages>
+        <fullName>Opportunity_Service_Line_Item_Outbound</fullName>
+        <apiVersion>36.0</apiVersion>
+        <description>Outbound Message for  Opportunity Service Line Item</description>
+        <endpointUrl>https://www.cognizant.com</endpointUrl>
+        <fields>Amplify_catalog_ID__c</fields>
+        <fields>Approved__c</fields>
+        <fields>Average_Billing_Rate_USD__c</fields>
+        <fields>Billability__c</fields>
+        <fields>CT_WINZONEOPPID__c</fields>
+        <fields>Confidence__c</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>Deal_Duration__c</fields>
+        <fields>Duration_Months__c</fields>
+        <fields>Estimated_Closed_Date__c</fields>
+        <fields>Exclude_From_Bid__c</fields>
+        <fields>First_Year_Revenue__c</fields>
+        <fields>Id</fields>
+        <fields>IsActive__c</fields>
+        <fields>LastModifiedById</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>Location__c</fields>
+        <fields>Name</fields>
+        <fields>NetNewRevenue__c</fields>
+        <fields>No_of_Resources__c</fields>
+        <fields>OSLI_Record_Type_Name__c</fields>
+        <fields>Offering__c</fields>
+        <fields>Opportunity1__c</fields>
+        <fields>Opportunity_Risk_Category__c</fields>
+        <fields>PSFT_Opp_Id__c</fields>
+        <fields>Point_of_contact__c</fields>
+        <fields>Practice__c</fields>
+        <fields>Primary__c</fields>
+        <fields>Product__c</fields>
+        <fields>Project_Start_Date__c</fields>
+        <fields>Ramp_Up_Month__c</fields>
+        <fields>Ramp_Up_Revenue_Per_Month__c</fields>
+        <fields>RecordTypeId</fields>
+        <fields>Resource_Description__c</fields>
+        <fields>Service_Line_Lead_Email__c</fields>
+        <fields>Split_of_TCV_for_Line_Item__c</fields>
+        <fields>Stage__c</fields>
+        <fields>Sys_Account_Id__c</fields>
+        <fields>Sys_Confidence_Id__c</fields>
+        <fields>Sys_Deal_Type_Id__c</fields>
+        <fields>Sys_Hor_Owner_Email__c</fields>
+        <fields>Sys_Owner_Email__c</fields>
+        <fields>Sys_Partner_Intermediary_Id__c</fields>
+        <fields>Sys_Strategic_Id__c</fields>
+        <fields>Sys_Vertical_Approver_Email_Id__c</fields>
+        <fields>Sys_hspoc_Email__c</fields>
+        <fields>TCV_Share__c</fields>
+        <fields>TrackingID__c</fields>
+        <fields>synergy_company__c</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>winzoneadmin@cognizant.com</integrationUser>
+        <name>Opportunity Service Line Item Outbound</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Opportunity Service Line Item above and equal Solutioning</fullName>
+        <actions>
+            <name>Opportunity_Service_Line_Item_Outbound</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <description>Outbound Message Triggered When Opportunity Service Line Item : Stage Equals To  3. Solutioning And Above &amp; Last Modified User Is Not an Integration User.</description>
+        <formula>AND
+(
+	OR
+	(
+		OR
+		(
+			ISPICKVAL(Stage__c , &apos;3. Solutioning&apos;),
+			ISPICKVAL(Stage__c , &apos;4. End-Game&apos;),
+			ISPICKVAL(Stage__c , &apos;5. Negotiation&apos;)
+		),
+		AND
+		(
+			OR
+			(
+				ISPICKVAL(Stage__c, &apos;Lost&apos;),
+				ISPICKVAL(Stage__c, &apos;Won&apos;),
+				ISPICKVAL(Stage__c, &apos;Client Withdraw&apos;),
+				ISPICKVAL(Stage__c, &apos;Cognizant Withdraw&apos;)
+			),
+			Opportunity1__r.Send_to_CRS__c = True
+		),
+		AND
+		(
+			ISPICKVAL(Stage__c, &apos;Duplicate&apos;),
+			Opportunity1__r.Send_to_CRS__c = True,
+			Opportunity1__r.Is_Qualified__c = True
+		)
+	),
+	Opportunity1__r.Opportunity_Record_Type_Developer_Name__c != &apos;Multi_BU_Multi_Geo&apos;,
+	TCV_Share__c &gt; 0,
+	$Profile.Name &lt;&gt; &apos;Integration User&apos;
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    
+</Workflow>

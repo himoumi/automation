@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <outboundMessages>
+        <fullName>PRAssessment_Outbound_Message</fullName>
+        <apiVersion>36.0</apiVersion>
+        <description>This outbound message is for the PR Assessment Outbound Message</description>
+        <endpointUrl>https://www.cognizant.com</endpointUrl>
+        <fields>Ans__c</fields>
+        <fields>Complexity_Indicator__c</fields>
+        <fields>CreatedByEmailID__c</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>Dimension__c</fields>
+        <fields>Dlgtd_To_Lst__c</fields>
+        <fields>Dlgtd_To__c</fields>
+        <fields>Id</fields>
+        <fields>Impact__c</fields>
+        <fields>Is_Dimension__c</fields>
+        <fields>LastModifiedById</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>Mitigation__c</fields>
+        <fields>Name</fields>
+        <fields>Opp_Stage__c</fields>
+        <fields>Opportunity__c</fields>
+        <fields>OwnerEmailId__c</fields>
+        <fields>OwnerId</fields>
+        <fields>Proxy_User__c</fields>
+        <fields>Ques__c</fields>
+        <fields>Question__c</fields>
+        <fields>Risk_Close_Date__c</fields>
+        <fields>Risk__c</fields>
+        <fields>Service_Line__c</fields>
+        <fields>Status__c</fields>
+        <fields>Target_Close_Dt__c</fields>
+        <fields>TrackingID__c</fields>
+        <fields>isFirst__c</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>winzoneadmin@cognizant.com</integrationUser>
+        <name>PRAssessment Outbound Message</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>PRAssessment Publish</fullName>
+        <actions>
+            <name>PRAssessment_Outbound_Message</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <description>This workflow publish the PR Assessment information to the CRS once the PR Assessment is submitted.</description>
+        <formula>OR ( 	AND 	( 		$User.IsActive = True, 		TEXT(Opportunity__r.Submit_Status__c)=&apos;Stage3AsmntSbmttd&apos;, 		OR 		( 			TEXT( Opportunity__r.StageName )=&apos;3. Solutioning&apos;, 			TEXT( Opportunity__r.StageName )=&apos;4. End-Game&apos;, 			TEXT( Opportunity__r.StageName )=&apos;5. Negotiation&apos; 		), 		OR 		( 			TEXT( Opp_Stage__c ) = &apos;3. Solutioning&apos;, 			TEXT( Opp_Stage__c ) = &apos;4. End-Game&apos;, 			TEXT( Opp_Stage__c ) = &apos;5. Negotiation&apos; 		), 		Opportunity__r.Vertical_TCV__c &gt; 0 	), 	AND 	( 		OR 		( 			$Profile.Name = &apos;Data Migration&apos;, 			$Profile.Name = &apos;System Administrator&apos; 		), 		TEXT(Opportunity__r.Submit_Status__c)=&apos;Stage3AsmntSbmttd&apos;, 		OR 		( 			TEXT(Opportunity__r.StageName) != &apos;1. Engagement&apos;, 			TEXT(Opportunity__r.StageName) != &apos;2. Shaping&apos; 		), 		Opportunity__r.Vertical_TCV__c &gt; 0 	) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

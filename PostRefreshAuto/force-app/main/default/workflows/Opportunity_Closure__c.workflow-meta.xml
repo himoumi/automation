@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    <outboundMessages>
+        <fullName>Opportunity_Closure_Outbound_Message</fullName>
+        <apiVersion>36.0</apiVersion>
+        <description>Outbound Message for Opportunity Closure</description>
+        <endpointUrl>https://www.cognizant.com</endpointUrl>
+        <fields>Actual_Close_Date__c</fields>
+        <fields>Actual_TCV_Won__c</fields>
+        <fields>Closed_No_Bid_Reason_Id__c</fields>
+        <fields>Closed_No_Bid_Reasons__c</fields>
+        <fields>Closure_Type__c</fields>
+        <fields>Comment__c</fields>
+        <fields>Competitor_Involved_Id__c</fields>
+        <fields>Competitor_Involved__c</fields>
+        <fields>Competitor_Winner_Information_Known_Id__c</fields>
+        <fields>Competitor_Winner_Information_Known__c</fields>
+        <fields>Competitor__c</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>Deal_Complete__c</fields>
+        <fields>Deal_TCV_Validation_Complete__c</fields>
+        <fields>Declaration__c</fields>
+        <fields>Files_Uploaded_Post_Closure_As_Won__c</fields>
+        <fields>Id</fields>
+        <fields>Incumbent1__c</fields>
+        <fields>Incumbent2__c</fields>
+        <fields>Incumbent3__c</fields>
+        <fields>Incumbent__c</fields>
+        <fields>LastModifiedById</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>Loss_Reason_Id__c</fields>
+        <fields>Loss_Reasons__c</fields>
+        <fields>Name</fields>
+        <fields>Opportunity1__c</fields>
+        <fields>Opportunity_Service_Line_Item__c</fields>
+        <fields>Other__c</fields>
+        <fields>Others_Reasons__c</fields>
+        <fields>Others__c</fields>
+        <fields>Outcome1__c</fields>
+        <fields>Outcome2__c</fields>
+        <fields>Outcome3__c</fields>
+        <fields>Outcome_Id__c</fields>
+        <fields>Outcome__c</fields>
+        <fields>OwnerId</fields>
+        <fields>RecordTypeId</fields>
+        <fields>Sys_Modified_Date__c</fields>
+        <fields>Sys_Status__c</fields>
+        <fields>TCV_Won1__c</fields>
+        <fields>TCV_Won__c</fields>
+        <fields>Tabled_By_Client_Reason_Id__c</fields>
+        <fields>Tabled_By_Client_Reason__c</fields>
+        <fields>TrackingID__c</fields>
+        <fields>Were_We_Down_Selected_Id__c</fields>
+        <fields>Were_We_Down_Selected__c</fields>
+        <fields>Which_Stage_did_we_lose_Id__c</fields>
+        <fields>Which_Stage_did_we_lose__c</fields>
+        <fields>Win_Reasons_Id__c</fields>
+        <fields>Win_Reasons__c</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>winzoneadmin@cognizant.com</integrationUser>
+        <name>Opportunity Closure Outbound Message</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Opportunity Closure</fullName>
+        <actions>
+            <name>Opportunity_Closure_Outbound_Message</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <description>Outbound Message Triggered When Opportunity Stage Lost or Won and is having a PSFT Oppty Id &amp; Last Modified User Is Not an Integration User.</description>
+        <formula>AND ( 	Opportunity1__r.Send_to_CRS__c = True, 	OR 	(    		ISPICKVAL(Opportunity1__r.StageName, &apos;Lost&apos;), 		ISPICKVAL(Opportunity1__r.StageName, &apos;Won&apos;), 		ISPICKVAL(Opportunity1__r.StageName, &apos;Client Withdraw&apos;), 		ISPICKVAL(Opportunity1__r.StageName, &apos;Cognizant Withdraw&apos;), 		AND 		( 			ISPICKVAL(Opportunity1__r.StageName , &apos;Duplicate&apos;), 			Opportunity1__r.Is_Qualified__c = True 		) 	), 	$Profile.Name &lt;&gt; &apos;Integration User&apos;, 	Opportunity1__r.Vertical_TCV__c &gt; 0, 	NOT(Opportunity1__r.Opportunity_Record_Type_Developer_Name__c = &apos;Closed_Framework_Deal_Opportunity&apos;) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    
+</Workflow>

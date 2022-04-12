@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <outboundMessages>
+        <fullName>Master_Bench_Mark_Repository_Outbound</fullName>
+        <apiVersion>43.0</apiVersion>
+        <endpointUrl>https://www.cognizant.com</endpointUrl>
+        <fields>Benchmark_Rate_Max__c</fields>
+        <fields>Benchmark_Rate_Med__c</fields>
+        <fields>Benchmark_Rate_Min__c</fields>
+        <fields>Benchmark_rate__c</fields>
+        <fields>Billing_Role_ID__c</fields>
+        <fields>Billing_Role__c</fields>
+        <fields>CCY_Unit_Measurement__c</fields>
+        <fields>CCY_symbol__c</fields>
+        <fields>Country__c</fields>
+        <fields>CreatedDate</fields>
+        <fields>Created_By__c</fields>
+        <fields>Geo__c</fields>
+        <fields>Horizontal__c</fields>
+        <fields>Id</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>Last_Modified_By__c</fields>
+        <fields>Premium_Pricing__c</fields>
+        <fields>Skill_Type_Category__c</fields>
+        <fields>Threshold_rate__c</fields>
+        <fields>TrackingID__c</fields>
+        <fields>Zone__c</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>avijit.das2@cognizant.com.prod</integrationUser>
+        <name>Master Bench Mark Repository Outbound</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>true</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Master Benchmark Repository Creation and Update Publish To CRS</fullName>
+        <actions>
+            <name>Master_Bench_Mark_Repository_Outbound</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <formula>OR( ISNEW() ,ISCHANGED( Benchmark_rate__c ) ,ISCHANGED( Benchmark_Rate_Max__c ),ISCHANGED( Benchmark_Rate_Med__c ),ISCHANGED( Benchmark_Rate_Min__c ),ISCHANGED( Billing_Role__c ),ISCHANGED( CCY_symbol__c ),ISCHANGED( CCY_Unit_Measurement__c ), ISCHANGED(Country__c ),ISCHANGED(  Premium_Pricing__c ),ISCHANGED( Horizontal__c ),ISCHANGED( Geo__c ),ISCHANGED( Zone__c ), ISCHANGED( Threshold_rate__c ), ISCHANGED( Skill_Type_Category__c ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

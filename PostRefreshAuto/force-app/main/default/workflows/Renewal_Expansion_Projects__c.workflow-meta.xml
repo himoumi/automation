@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <outboundMessages>
+        <fullName>Renewal_Expansion_Projects_Outbound</fullName>
+        <apiVersion>40.0</apiVersion>
+        <description>Outbound Message for the Renewal/Expansion Projects object.</description>
+        <endpointUrl>https://www.cognizant.com</endpointUrl>
+        <fields>Billability_Type__c</fields>
+        <fields>Create_Multiple_Projects__c</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>Exclude_From_Renewal__c</fields>
+        <fields>Exclusion_Reason_Code__c</fields>
+        <fields>Existing_Project_End_Date__c</fields>
+        <fields>Id</fields>
+        <fields>Inactive__c</fields>
+        <fields>LastModifiedById</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>Name</fields>
+        <fields>Opportunity_Stage__c</fields>
+        <fields>Opportunity__c</fields>
+        <fields>Project_Category__c</fields>
+        <fields>Project_ID__c</fields>
+        <fields>Project_Manager_Id__c</fields>
+        <fields>Project_Manager__c</fields>
+        <fields>Project__c</fields>
+        <fields>Renewed_Project_End_Date__c</fields>
+        <fields>TrackingID__c</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>winzoneadmin@cognizant.com</integrationUser>
+        <name>Renewal/Expansion Projects Outbound</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Renewal_Expansion_Projects_Publish_To_CRS</fullName>
+        <actions>
+            <name>Renewal_Expansion_Projects_Outbound</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <description>This workflow is to publish the Renewal/Expansion Projects information to CRS</description>
+        <formula>AND ( 	OR 	( 		ISPICKVAL(Opportunity__r.StageName, &quot;3. Solutioning&quot;), 		ISPICKVAL(Opportunity__r.StageName, &quot;4. End-Game&quot;), 		ISPICKVAL(Opportunity__r.StageName, &quot;5. Negotiation&quot;), 		ISPICKVAL(Opportunity__r.StageName, &quot;Lost&quot;), 		ISPICKVAL(Opportunity__r.StageName, &quot;Won&quot;), 		ISPICKVAL(Opportunity__r.StageName, &quot;Client Withdraw&quot;), 		ISPICKVAL(Opportunity__r.StageName, &quot;Cognizant Withdraw&quot;), 		AND 		( 			ISPICKVAL(Opportunity__r.StageName, &quot;Duplicate&quot;), 			Opportunity__r.Is_Qualified__c = True 		) 	), 	$Profile.Name &lt;&gt; &apos;Integration User&apos; )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    
+</Workflow>

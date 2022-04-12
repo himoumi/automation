@@ -1,0 +1,16 @@
+<apex:page controller="PackageCreatorController" contentType="application/xml">
+<apex:variable value="" var="newline"/>
+<apex:outputText value='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' escape="false"/>
+{!newline}
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apex:repeat value="{!packageComponents}" var="compType">
+    <types>
+        <apex:repeat value="{!packageComponents[compType]}" var="compName">
+        <members>{!compName}</members>
+        </apex:repeat>
+        <name>{!compType}</name>
+    </types>
+    </apex:repeat>
+    <version>49.0</version>
+</Package>
+</apex:page>

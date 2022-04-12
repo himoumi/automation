@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+	<fieldUpdates>
+        <fullName>Update_DMG_CDMG_Email_Id</fullName>
+        <description>Populated email id of the DMG or CDMG group based on the Account field Customer Category ( Prospect/ Customer )</description>
+        <field>DMG_CDMG_Email_Id__c</field>
+        <formula>IF( 
+	ISPICKVAL(Customer_Category__c, &apos;Existing&apos;)  , &apos;Akarsh.Gupta@Cognizant.com&apos;, 
+
+	IF(  
+		ISPICKVAL(Customer_Category__c, &apos;Prospect&apos;)  , &apos;Akarsh.Gupta@cognizant.com&apos;, &apos;&apos;
+	) 
+
+)</formula>
+        <name>Update DMG/CDMG Email Id</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+	<outboundMessages>
+        <fullName>Account_Outbound_Message</fullName>
+        <apiVersion>40.0</apiVersion>
+        <description>Outbound Message for Account</description>
+        <endpointUrl>https://www.cognizant.com</endpointUrl>
+        <fields>Account_End_Date__c</fields>
+        <fields>Account_Owner_Email__c</fields>
+        <fields>Account_Start_Date__c</fields>
+        <fields>Account_Tagging__c</fields>
+        <fields>Acquired_Company__c</fields>
+        <fields>Alternate_Customer_Name__c</fields>
+        <fields>BU_Id__c</fields>
+        <fields>BU__c</fields>
+        <fields>CP_Employee_Number__c</fields>
+        <fields>CRM_Status__c</fields>
+        <fields>Client_Partner_Id__c</fields>
+        <fields>Competitor__c</fields>
+        <fields>Country_Id__c</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>Customer_Category__c</fields>
+        <fields>Customer__c</fields>
+        <fields>Customer_record_owned_by__c</fields>
+        <fields>DUNS_Number__c</fields>
+        <fields>Entity_for_Raising_Invoice__c</fields>
+        <fields>Financial_Ultimate_Customer_Id__c</fields>
+        <fields>GL_BU_ID__c</fields>
+        <fields>Global_Market_Id__c</fields>
+        <fields>Global_Market__c</fields>
+        <fields>Government_Owned_State_Owned_Enterprise__c</fields>
+        <fields>Id</fields>
+        <fields>Industry_Segment_Id__c</fields>
+        <fields>Industry_Segment__c</fields>
+        <fields>Internal_Customer__c</fields>
+        <fields>LastModifiedById</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>Location_Type__c</fields>
+        <fields>Market_Id__c</fields>
+        <fields>Market__c</fields>
+        <fields>Name</fields>
+        <fields>Partner_Classification__c</fields>
+        <fields>Partner__c</fields>
+        <fields>PeopleSoft_Customer_ID__c</fields>
+        <fields>PeopleSoft_Parent_Account_ID__c</fields>
+        <fields>Qualified__c</fields>
+        <fields>RHMS_Vertical_Id__c</fields>
+        <fields>Region__c</fields>
+        <fields>SBU1_Id__c</fields>
+        <fields>SBU2_Id__c</fields>
+        <fields>SBU_1__c</fields>
+        <fields>SBU_2__c</fields>
+        <fields>ShippingCity</fields>
+        <fields>ShippingCountry</fields>
+        <fields>ShippingPostalCode</fields>
+        <fields>ShippingState</fields>
+        <fields>ShippingStreet</fields>
+        <fields>Shipping_Street2__c</fields>
+        <fields>Shipping_Street3__c</fields>
+        <fields>Shipping_Street4__c</fields>
+        <fields>State_Id__c</fields>
+        <fields>Stock_Symbol__c</fields>
+        <fields>Sub_Cust_Type__c</fields>
+        <fields>Sub_Vertical_Id__c</fields>
+        <fields>Sub_Vertical__c</fields>
+        <fields>Tax_Payer_Id__c</fields>
+        <fields>TrackingID__c</fields>
+        <fields>Type</fields>
+        <fields>Ultimate_Parent_CustomerID__c</fields>
+        <fields>VerticalID__c</fields>
+        <fields>Vertical__c</fields>
+        <fields>Website</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>winzoneadmin@cognizant.com</integrationUser>
+        <name>Account Outbound Message</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+	<rules>
+        <fullName>Account Creation and Update Publish to CRS</fullName>
+        <actions>
+            <name>Account_Outbound_Message</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <description>Workflow to publish the Account created/updated.</description>
+        <formula>AND ( 	OR 	( 		ISCHANGED(Account_End_Date__c), 		ISCHANGED(Account_Owner_Email__c), 		ISCHANGED(Account_Start_Date__c), 		ISCHANGED(Acquired_Company__c), 		ISCHANGED(Alternate_Customer_Name__c), 		ISCHANGED(BU__c), 		ISCHANGED(CRM_Status__c), 		ISCHANGED(Client_Partner_Id__c), 		ISCHANGED(Competitor__c), 		ISCHANGED(Customer_Category__c), 		ISCHANGED(Customer__c), 		ISCHANGED(Customer_record_owned_by__c), 		ISCHANGED(DUNS_Number__c), 		ISCHANGED(Entity_for_Raising_Invoice__c), 		ISCHANGED(Financial_Ultimate_Customer_Id__c), 		ISCHANGED(GL_BU_ID__c), 		ISCHANGED(Global_Market__c), 		ISCHANGED(Market__c), 		ISCHANGED(Market_Id__c), 		ISCHANGED(Internal_Customer__c), 		ISCHANGED(Location_Type__c), 		ISCHANGED(Name), 		ISCHANGED(Partner_Classification__c), 		ISCHANGED(Partner__c), 		ISCHANGED(PeopleSoft_Customer_ID__c), 		ISCHANGED(PeopleSoft_Parent_Account_ID__c), 		ISCHANGED(Qualified__c), 		ISCHANGED(Region__c), 		ISCHANGED(SBU_1__c), 		ISCHANGED(SBU_2__c), 		ISCHANGED(ShippingCity), 		ISCHANGED(ShippingCountry), 		ISCHANGED(ShippingPostalCode), 		ISCHANGED(ShippingState), 		ISCHANGED(ShippingStreet), 		ISCHANGED(Stock_Symbol__c), 		ISCHANGED(Sub_Cust_Type__c), 		ISCHANGED(Sub_Vertical__c), 		ISCHANGED(Tax_Payer_Id__c), 		ISCHANGED(Type), 		ISCHANGED(Ultimate_Parent_CustomerID__c), 		ISCHANGED(Vertical__c), 		ISCHANGED(Website), 		ISCHANGED(Shipping_Street2__c), 		ISCHANGED(Shipping_Street3__c), 		ISCHANGED(Shipping_Street4__c), 		ISCHANGED(CP_Employee_Number__c), 		ISCHANGED(Account_Tagging__c), 		ISCHANGED(Government_Owned_State_Owned_Enterprise__c), 		ISNEW() 	), 	RecordType.Name = &apos;Approved Account&apos;, 	Name &lt;&gt; &apos;CEO Account&apos; )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+	<alerts>
+        <fullName>Account_Creation_Email_notification</fullName>
+        <ccEmails>test123@cognizant.com</ccEmails>
+        <description>Account Creation Email notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>ankurbhatha.kirit@cognizant.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ram.kishore@cognizant.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Account/Account_Created_Notification</template>
+    </alerts>
+	<alerts>
+        <fullName>Account_create_update_for_Risk_Countries</fullName>
+        <description>Account create/update for Risk Countries</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>globaltrade@cognizant.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>winzoneadmin@cognizant.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Risk_countries_in_Account</template>
+    </alerts>
+</Workflow>

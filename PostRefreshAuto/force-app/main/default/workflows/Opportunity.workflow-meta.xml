@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>CDMG_Team_reminder_verification_Email</fullName>
+        <ccEmails>test123@Cognizant.com</ccEmails>
+        <description>CDMG Team reminder verification Email</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ankurbhatha.kirit@cognizant.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ram.kishore@cognizant.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Verified_by_CDMG_Team</template>
+    </alerts>
+    
+    <alerts>
+        <fullName>Opportunity_Won_TCV_500000</fullName>
+        <ccEmails>test123@cognizant.com</ccEmails>
+        <description>Send Email to Pursuit Lead for Opportunity Won</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>winops@cognizant.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Opportunity_Won_TCV_500_000</template>
+    </alerts>
+    
+    <outboundMessages>
+        <fullName>Opportunity_Outbound_Message</fullName>
+        <apiVersion>36.0</apiVersion>
+        <description>Outbound Message for Opportunity</description>
+        <endpointUrl>https://www.cognizant.com</endpointUrl>
+        <fields>AccountId</fields>
+        <fields>Actual_Close_Date1__c</fields>
+        <fields>Amount</fields>
+        <fields>Anchor_Opp__c</fields>
+        <fields>Approved__c</fields>
+        <fields>BPaaS_Based__c</fields>
+        <fields>BPaaS_Platform__c</fields>
+        <fields>BU_Account__c</fields>
+        <fields>Billablity_Type__c</fields>
+        <fields>CT_WINZONEOPPID__c</fields>
+        <fields>Client_Partner__c</fields>
+        <fields>CloseDate</fields>
+        <fields>Commercial_Construct_Solution__c</fields>
+        <fields>Commercial_Model__c</fields>
+        <fields>Competitive__c</fields>
+        <fields>Competitors_Id__c</fields>
+        <fields>Competitors__c</fields>
+        <fields>CountClose_for_WinRate__c</fields>
+        <fields>Count_Closure__c</fields>
+        <fields>Count_Forecast__c</fields>
+        <fields>Count_Line_Item__c</fields>
+        <fields>Count_Partner__c</fields>
+        <fields>Create_EXANT_Project__c</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>Current_Year_Revenue__c</fields>
+        <fields>Customer_ID__c</fields>
+        <fields>Customer_Profitability__c</fields>
+        <fields>DA_report_Link__c</fields>
+        <fields>DB_Days__c</fields>
+        <fields>Days_in_Stage__c</fields>
+        <fields>Deal_Duration__c</fields>
+        <fields>Deal_Size__c</fields>
+        <fields>Deliverability_Assessment_Status__c</fields>
+        <fields>Delivery_Construct__c</fields>
+        <fields>Description</fields>
+        <fields>Dim_CC__c</fields>
+        <fields>Dim_CRM__c</fields>
+        <fields>Dim_DB_Val__c</fields>
+        <fields>Dim_DM__c</fields>
+        <fields>Dim_Fin__c</fields>
+        <fields>Dim_LA__c</fields>
+        <fields>Dim_RM__c</fields>
+        <fields>Dim_SM__c</fields>
+        <fields>Dim_Scope__c</fields>
+        <fields>ESA_Project_Id__c</fields>
+        <fields>First_Parent_Opportunity_Id__c</fields>
+        <fields>First_Year__c</fields>
+        <fields>Forecast_Category__c</fields>
+        <fields>Horizontal_Only_Opportunity__c</fields>
+        <fields>Id</fields>
+        <fields>Incumbent__c</fields>
+        <fields>LastModifiedById</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>LeadSource</fields>
+        <fields>Legacy_Record_Type_Name__c</fields>
+        <fields>MSI_Involvement_Required__c</fields>
+        <fields>Multi_BU_Multi_Geo_Opportunity_Id__c</fields>
+        <fields>Multi_BU_Multi_Geo_Opportunity_Name__c</fields>
+        <fields>NNR__c</fields>
+        <fields>Name</fields>
+        <fields>New_Geography__c</fields>
+        <fields>New_High_Risk_Strategic_Account__c</fields>
+        <fields>New_Services__c</fields>
+        <fields>Next_Year_Revenue__c</fields>
+        <fields>Opportunity_Record_Type_Name__c</fields>
+        <fields>Opportunity_Short_Description__c</fields>
+        <fields>Ovrl_Pur_Rsk_Score__c</fields>
+        <fields>OwnerId</fields>
+        <fields>Partner__c</fields>
+        <fields>Pending_Renewal2__c</fields>
+        <fields>Pending_Renewal_Reason2__c</fields>
+        <fields>Pending_Renewal_Reason__c</fields>
+        <fields>Pending_Renewal__c</fields>
+        <fields>Playbook__c</fields>
+        <fields>Potential_Deal__c</fields>
+        <fields>Potential_Validated__c</fields>
+        <fields>Practice_Area__c</fields>
+        <fields>Primary_Competitor__c</fields>
+        <fields>Primary_Contact__c</fields>
+        <fields>Project_Category__c</fields>
+        <fields>Project_Delay_Reason__c</fields>
+        <fields>Project_End_Date__c</fields>
+        <fields>Project_Manager_Id__c</fields>
+        <fields>Project_Manager__c</fields>
+        <fields>Project_Start_Date__c</fields>
+        <fields>Project__c</fields>
+        <fields>Ramp_Up_Revenue_Per_Month__c</fields>
+        <fields>Ramp_up_Months__c</fields>
+        <fields>RecordTypeId</fields>
+        <fields>Renewed_Opportunity__c</fields>
+        <fields>Resource_Dt_Rigid__c</fields>
+        <fields>Risk_Category__c</fields>
+        <fields>Sensitive_Geography__c</fields>
+        <fields>Service_Line__c</fields>
+        <fields>Sole_Sourced__c</fields>
+        <fields>Specific_Services__c</fields>
+        <fields>StageName</fields>
+        <fields>Strategic1__c</fields>
+        <fields>Sys_Confidence_Id__c</fields>
+        <fields>Sys_Deal_Type_Id__c</fields>
+        <fields>Sys_Owner_Email__c</fields>
+        <fields>Sys_Partner_Intermediary_Id__c</fields>
+        <fields>Sys_Strategic_Id__c</fields>
+        <fields>TCV_Open__c</fields>
+        <fields>TrackingID__c</fields>
+        <fields>Type</fields>
+        <fields>Vertical_Opportunity_Owner__c</fields>
+        <fields>Vertical_TCV__c</fields>
+        <fields>Win_Odds__c</fields>
+        <fields>X3rd_Party_Advisor_TPA__c</fields>
+        <fields>synergy_company__c</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>winzoneadmin@cognizant.com</integrationUser>
+        <name>Opportunity Outbound Message</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    
+    <rules>
+        <fullName>Opportunity Creation and Update Publish to CRS</fullName>
+        <actions>
+            <name>Update_Send_To_CRS</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opportunity_Outbound_Message</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <description>Workflow to publish the Opportunity created/updated With Stage Is 3. Solutioning and beyond Or the record is updated by Integration User.</description>
+        <formula>AND ( 	OR 	( 		ISPICKVAL( StageName , &apos;3. Solutioning&apos;), 		ISPICKVAL( StageName , &apos;4. End-Game&apos;), 		ISPICKVAL( StageName , &apos;5. Negotiation&apos;) 	), 	NOT(Opportunity_Record_Type_Developer_Name__c = &apos;Multi_BU_Multi_Geo&apos;), 	NOT(Opportunity_Record_Type_Developer_Name__c = &apos;Framework_Deal&apos;), 	Vertical_TCV__c &gt; 0 )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    
+    <rules>
+        <fullName>Opportunity Stage changes to Closed</fullName>
+        <actions>
+            <name>Opportunity_Outbound_Message</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <description>Outbound Message Triggered When Opportunity Stage changes to any of the closed stage and is having a PSFT Opportunity Id &amp; Last Modified User Is Not an Integration User.</description>
+        <formula>AND ( 	Send_to_CRS__c = True, 	OR 	( 		ISPICKVAL(StageName , &apos;Lost&apos;), 		ISPICKVAL(StageName , &apos;Client Withdraw&apos;), 		ISPICKVAL(StageName , &apos;Cognizant Withdraw&apos;), 		ISPICKVAL(StageName , &apos;Won&apos;), 		AND 		( 			ISPICKVAL(StageName , &apos;Duplicate&apos;), 			Is_Qualified__c = True 		) 	), 	$Profile.Name &lt;&gt; &apos;Integration User&apos;, 	NOT(Opportunity_Record_Type_Developer_Name__c = &apos;Multi_BU_Multi_Geo&apos;), 	NOT(Opportunity_Record_Type_Developer_Name__c = &apos;Closed_Framework_Deal_Opportunity&apos;), 	Vertical_TCV__c &gt; 0 )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+   
+</Workflow>

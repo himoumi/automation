@@ -1,0 +1,1298 @@
+[
+  {
+    "ObjectLabel": "Action",
+    "ObjectAPIName": "QuickAction",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Action Link Group Template",
+    "ObjectAPIName": "ActionLinkGroupTemplate",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Allow URL for Redirects",
+    "ObjectAPIName": "RedirectWhitelistUrl",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Allowed Site",
+    "ObjectAPIName": "CspTrustedSite",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Apex Class",
+    "ObjectAPIName": "ApexClass",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Apex Sharing Reason",
+    "ObjectAPIName": "SharingReason",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Apex Trigger",
+    "ObjectAPIName": "ApexTrigger",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "App",
+    "ObjectAPIName": "CustomApplication",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Approval Process",
+    "ObjectAPIName": "ApprovalProcess",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Asset File",
+    "ObjectAPIName": "ContentAsset",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Assignment Rule",
+    "ObjectAPIName": "AssignmentRule",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Assistant Recommendation Type",
+    "ObjectAPIName": "",
+    "FieldsToFetch": "",
+    "Method": "",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Aura Component Bundle",
+    "ObjectAPIName": "AuraDefinitionBundle",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Auth. Provider",
+    "ObjectAPIName": "AuthProvider",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Auto-Response Rule",
+    "ObjectAPIName": "AutoResponseRule",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Button or Link",
+    "ObjectAPIName": "WebLink",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "CORS Allowed Origin List",
+    "ObjectAPIName": "CorsWhitelistOrigin",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Call Center",
+    "ObjectAPIName": "CallCenter",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Campaign Influence Model",
+    "ObjectAPIName": "CampaignInfluenceModel",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Campaign Member status",
+    "ObjectAPIName": "Campaign_Member_status__mdt",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Channel Menu Deployment",
+    "ObjectAPIName": "EmbeddedServiceMenuSettings",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Chat Agent Configuration",
+    "ObjectAPIName": "LiveChatAgentConfig",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Chat Blocking Rule",
+    "ObjectAPIName": "LiveChatSensitiveDataRule",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Chat Button",
+    "ObjectAPIName": "LiveChatButton",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Chat Deployment",
+    "ObjectAPIName": "LiveChatDeployment",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Classic Letterhead",
+    "ObjectAPIName": "Letterhead",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Communication Channel Layout",
+    "ObjectAPIName": "ChannelLayout",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Compact Layout",
+    "ObjectAPIName": "CompactLayout",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Content Security Policy Trusted Site",
+    "ObjectAPIName": "CspTrustedSite",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Custom Console Component",
+    "ObjectAPIName": "CustomApplicationComponent",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Custom Data Type",
+    "ObjectAPIName": "",
+    "FieldsToFetch": "",
+    "Method": "",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Custom Field",
+    "ObjectAPIName": "CustomField",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "Y",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Custom Help Menu Section",
+    "ObjectAPIName": "CustomHelpMenuSection",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Custom Index",
+    "ObjectAPIName": "CustomIndex",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Custom Label",
+    "ObjectAPIName": "CustomLabel",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Custom Metadata Type",
+    "ObjectAPIName": "CustomMetadata",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Custom Notification Type",
+    "ObjectAPIName": "CustomNotificationType",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Custom Object",
+    "ObjectAPIName": "CustomObject",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "Y",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Custom Permission",
+    "ObjectAPIName": "CustomPermission",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Custom Report Type",
+    "ObjectAPIName": "ReportType",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Custom Setting",
+    "ObjectAPIName": "CustomObject",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "DEPRECATEPath to Scale Setting [p2s_base1]",
+    "ObjectAPIName": "p2s_base1__PathToScaleSetting__mdt",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Dashboard",
+    "ObjectAPIName": "Dashboard",
+    "FieldsToFetch": "DeveloperName,FolderName",
+    "Method": "SOQL",
+    "Clause": "FolderName NOT IN ('Private Reports','Public Reports') AND NamespacePrefix = null",
+    "IncludePckg": "",
+    "DisplayFormat": "FolderName/DeveloperName"
+  },
+  {
+    "ObjectLabel": "Data Service",
+    "ObjectAPIName": "CleanDataService",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Default Briefing Source Field Mapping [bsource]",
+    "ObjectAPIName": "bsource__Default_Briefing_Source_Field_Mapping__mdt",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Document",
+    "ObjectAPIName": "Document",
+    "FieldsToFetch": "DeveloperName,FolderId",
+    "Method": "SOQL",
+    "Clause": "NamespacePrefix = null",
+    "IncludePckg": "",
+    "DisplayFormat": "FolderName/DeveloperName"
+  },
+  {
+    "ObjectLabel": "Duplicate Rule",
+    "ObjectAPIName": "DuplicateRule",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "EclairNG Map GeoJson",
+    "ObjectAPIName": "EclairGeoData",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Email Service",
+    "ObjectAPIName": "EmailServicesFunction",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Email Template",
+    "ObjectAPIName": "EmailTemplate",
+    "FieldsToFetch": "DeveloperName,FolderName",
+    "Method": "SOQL",
+    "Clause": "FolderName NOT IN ('Unfiled Public Classic Email Templates','Public Email Templates') AND NamespacePrefix = null",
+    "IncludePckg": "",
+    "DisplayFormat": "FolderName/DeveloperName"
+  },
+  {
+    "ObjectLabel": "Embedded Service Deployment",
+    "ObjectAPIName": "EmbeddedServiceConfig",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Entity Implements",
+    "ObjectAPIName": "EntityImplements",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Escalation Rule",
+    "ObjectAPIName": "EscalationRule",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Event Subscription",
+    "ObjectAPIName": "EventSubscription",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Extension",
+    "ObjectAPIName": "ChatterExtension",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "External Data Source",
+    "ObjectAPIName": "ExternalDataSource",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "External Service Registration",
+    "ObjectAPIName": "ExternalServiceRegistration",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "FC FCP Matrix",
+    "ObjectAPIName": "FC_FCP_Matrix__mdt",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Feed Filter",
+    "ObjectAPIName": "",
+    "FieldsToFetch": "",
+    "Method": "",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Field Mapping",
+    "ObjectAPIName": "FieldMapping",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Field Set",
+    "ObjectAPIName": "FieldSet",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Flow Definition",
+    "ObjectAPIName": "FlowDefinition",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Report Folder",
+    "ObjectAPIName": "ReportFolder",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Email Folder",
+    "ObjectAPIName": "EmailFolder",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Document Folder",
+    "ObjectAPIName": "DocumentFolder",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Global Value Set",
+    "ObjectAPIName": "GlobalValueSet",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Group",
+    "ObjectAPIName": "Group",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Home Page Component",
+    "ObjectAPIName": "HomePageComponent",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Home Page Layout",
+    "ObjectAPIName": "HomePageLayout",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Inbound Network Connection",
+    "ObjectAPIName": "InboundNetworkConnection",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Knowledge Action",
+    "ObjectAPIName": "",
+    "FieldsToFetch": "",
+    "Method": "",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Language Translation",
+    "ObjectAPIName": "",
+    "FieldsToFetch": "",
+    "Method": "",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Lightning Bolt",
+    "ObjectAPIName": "LightningBolt",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Lightning Community Template",
+    "ObjectAPIName": "CommunityTemplateDefinition",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Lightning Community Theme",
+    "ObjectAPIName": "CommunityThemeDefinition",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Lightning Experience Theme",
+    "ObjectAPIName": "LightningExperienceTheme",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Lightning Message Channel",
+    "ObjectAPIName": "LightningMessageChannel",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Lightning Page",
+    "ObjectAPIName": "FlexiPage",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Lightning Web Component Bundle",
+    "ObjectAPIName": "LightningComponentBundle",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "List View",
+    "ObjectAPIName": "ListView",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Managed Content Type",
+    "ObjectAPIName": "ManagedContentType",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Matching Rule",
+    "ObjectAPIName": "MatchingRule",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Microsoft® Outlook® Web App Domain",
+    "ObjectAPIName": "",
+    "FieldsToFetch": "",
+    "Method": "",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Named Credential",
+    "ObjectAPIName": "NamedCredential",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Network",
+    "ObjectAPIName": "Network",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Opportunity SPOOutcomeAtomVal Mapping [spo4]",
+    "ObjectAPIName": "spo4__Opportunity_SPOOutcomeAtomVal_Mapping__mdt",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Outbound Network Connection",
+    "ObjectAPIName": "OutboundNetworkConnection",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Page Layout",
+    "ObjectAPIName": "Layout",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Path Assistant",
+    "ObjectAPIName": "PathAssistant",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Permission Set",
+    "ObjectAPIName": "PermissionSet",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Permission Set Group",
+    "ObjectAPIName": "PermissionSetGroup",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Platform Cache Partition",
+    "ObjectAPIName": "PlatformCachePartition",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Platform Event Channel",
+    "ObjectAPIName": "PlatformEventChannel",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Platform Event Channel Member",
+    "ObjectAPIName": "PlatformEventChannelMember",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Post Template",
+    "ObjectAPIName": "PostTemplate",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Prompt",
+    "ObjectAPIName": "Prompt",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Queue",
+    "ObjectAPIName": "Queue",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Recommendation Strategy",
+    "ObjectAPIName": "RecommendationStrategy",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Record Type",
+    "ObjectAPIName": "RecordType",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "RecordAction Deployment",
+    "ObjectAPIName": "RecordActionDeployment",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Remote Site",
+    "ObjectAPIName": "RemoteSiteSetting",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Report",
+    "ObjectAPIName": "Report",
+    "FieldsToFetch": "DeveloperName,FolderName",
+    "Method": "SOQL",
+    "Clause": "FolderName NOT IN ('Private Reports','Public Reports') AND NamespacePrefix = null",
+    "IncludePckg": "",
+    "DisplayFormat": "FolderName/DeveloperName"
+  },
+  {
+    "ObjectLabel": "Reporting Snapshot",
+    "ObjectAPIName": "",
+    "FieldsToFetch": "",
+    "Method": "",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Role",
+    "ObjectAPIName": "Role",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "S-Control",
+    "ObjectAPIName": "Scontrol",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "SPO Prediction Setting [spo4]",
+    "ObjectAPIName": "spo4__SPO_Prediction_Setting__mdt",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Security Custom Baseline",
+    "ObjectAPIName": "",
+    "FieldsToFetch": "",
+    "Method": "",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Send Action",
+    "ObjectAPIName": "",
+    "FieldsToFetch": "",
+    "Method": "",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Sensitive Data Rule",
+    "ObjectAPIName": "LiveChatSensitiveDataRule",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Sharing Criteria Rule",
+    "ObjectAPIName": "SharingCriteriaRule",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Sharing Guest Rule",
+    "ObjectAPIName": "SharingGuestRule",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Sharing Owner Rule",
+    "ObjectAPIName": "SharingOwnerRule",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Sharing Set",
+    "ObjectAPIName": "SharingSet",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Site.com",
+    "ObjectAPIName": "",
+    "FieldsToFetch": "",
+    "Method": "",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Skill",
+    "ObjectAPIName": "Skill",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Static Resource",
+    "ObjectAPIName": "StaticResource",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Storyboard Map [vyn]",
+    "ObjectAPIName": "vyn__storyboardMap__mdt",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "SuccessFactor Setting [vyn_cognizant]",
+    "ObjectAPIName": "vyn_cognizant__successFactorSetting__mdt",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Tab",
+    "ObjectAPIName": "CustomTab",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Transaction Security Policy",
+    "ObjectAPIName": "TransactionSecurityPolicy",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Trigger Settings [spo4]",
+    "ObjectAPIName": "spo4__Trigger_Settings__mdt",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "User Provisioning Config",
+    "ObjectAPIName": "UserProvisioningConfig",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Validation Rule",
+    "ObjectAPIName": "ValidationRule",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Visualforce Component",
+    "ObjectAPIName": "ApexComponent",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Visualforce Page",
+    "ObjectAPIName": "ApexPage",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Workflow Email Alert",
+    "ObjectAPIName": "WorkflowAlert",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Workflow Field Update",
+    "ObjectAPIName": "WorkflowFieldUpdate",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Workflow Outbound Message",
+    "ObjectAPIName": "WorkflowOutboundMessage",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Workflow Rule",
+    "ObjectAPIName": "WorkflowRule",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Workflow Task",
+    "ObjectAPIName": "WorkflowTask",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Zone",
+    "ObjectAPIName": "Community",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "vyn Setup [vyn]",
+    "ObjectAPIName": "vyn__vyn_setup__mdt",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "vynPrompt Setup [vyn]",
+    "ObjectAPIName": "vyn__vynPromptSetup__mdt",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "vynPublishObject [vyn]",
+    "ObjectAPIName": "vyn__vynPublishObject__mdt",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "vynScore [vyn]",
+    "ObjectAPIName": "vyn__vynScore__mdt",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "vynStoryboard Setup [vyn]",
+    "ObjectAPIName": "vyn__vynStoryboardSetup__mdt",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+  },
+  {
+    "ObjectLabel": "Analytics Application",
+    "ObjectAPIName": "WaveApplication",
+    "FieldsToFetch": "fullName",
+    "Method": "MetadataAPI",
+    "Clause": "",
+    "IncludePckg": "",
+    "DisplayFormat": ""
+	},
+	{
+		"ObjectLabel": "Analytics Dataflow",
+		"ObjectAPIName": "WaveDataflow",
+		"FieldsToFetch": "fullName",
+		"Method": "MetadataAPI",
+		"Clause": "",
+		"IncludePckg": "",
+		"DisplayFormat": ""
+	},
+	{
+		"ObjectLabel": "Analytics Dashboard",
+		"ObjectAPIName": "WaveDashboard",
+		"FieldsToFetch": "fullName",
+		"Method": "MetadataAPI",
+		"Clause": "",
+		"IncludePckg": "",
+		"DisplayFormat": ""
+	},
+	{
+		"ObjectLabel": "Analytics Dataset",
+		"ObjectAPIName": "WaveDataset",
+		"FieldsToFetch": "fullName",
+		"Method": "MetadataAPI",
+		"Clause": "",
+		"IncludePckg": "",
+		"DisplayFormat": ""
+	},
+	{
+		"ObjectLabel": "Analytics Lens",
+		"ObjectAPIName": "WaveLens",
+		"FieldsToFetch": "fullName",
+		"Method": "MetadataAPI",
+		"Clause": "",
+		"IncludePckg": "",
+		"DisplayFormat": ""
+	},
+	{
+		"ObjectLabel": "Analytics Recipe",
+		"ObjectAPIName": "WaveRecipe",
+		"FieldsToFetch": "fullName",
+		"Method": "MetadataAPI",
+		"Clause": "",
+		"IncludePckg": "",
+		"DisplayFormat": ""
+	},
+	{
+		"ObjectLabel": "Analytics Dataset Metadata",
+		"ObjectAPIName": "WaveXmd",
+		"FieldsToFetch": "fullName",
+		"Method": "MetadataAPI",
+		"Clause": "",
+		"IncludePckg": "",
+		"DisplayFormat": ""
+	},
+	{
+		"ObjectLabel": "EclairNG Map GeoJson",
+		"ObjectAPIName": "EclairGeoData",
+		"FieldsToFetch": "fullName",
+		"Method": "MetadataAPI",
+		"Clause": "",
+		"IncludePckg": "",
+		"DisplayFormat": ""
+	}
+]

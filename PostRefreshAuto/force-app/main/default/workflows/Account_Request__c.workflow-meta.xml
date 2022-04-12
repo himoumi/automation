@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Account_Approved_by_CDMG_Team</fullName>
+        <ccEmails>test123@Cognizant.com</ccEmails>
+        <description>Account Approved by CDMG Team</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Account_Request/Account_Approved_by_DMG_CDMG_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Account_Approved_by_DMG_Team</fullName>
+        <ccEmails>test123@Cognizant.com</ccEmails>
+        <description>Account Approved by DMG Team</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Account_Request/Account_Approved_by_DMG_CDMG_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Account_Rejected_by_CDMG_Team</fullName>
+        <ccEmails>test123@Cognizant.com</ccEmails>
+        <description>Account Rejected by CDMG Team</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Account_Request/Account_Rejected_by_DMG_CDMG_Notification</template>
+    </alerts>
+    
+    <alerts>
+        <fullName>Account_Rejected_by_DMG_Team</fullName>
+        <ccEmails>test123@Cognizant.com</ccEmails>
+        <description>Account Rejected by DMG Team</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Account_Request/Account_Rejected_by_DMG_CDMG_Notification</template>
+    </alerts>
+    
+    
+    <alerts>
+        <fullName>Account_updation_request</fullName>
+        <ccEmails>test123@Cognizant.com</ccEmails>
+        <description>Account updation request</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mariajohnnixon.sebastin1@cognizant.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>prakash.babu@cognizant.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Account_Update_Request</template>
+    </alerts>
+    
+</Workflow>

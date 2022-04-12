@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <outboundMessages>
+        <fullName>Skill_Mapping_Repository_Outbound</fullName>
+        <apiVersion>43.0</apiVersion>
+        <endpointUrl>https://www.cognizant.com</endpointUrl>
+        <fields>Billing_Role_ID__c</fields>
+        <fields>Billing_Role__c</fields>
+        <fields>Billing_role_to_CCA_mapping__c</fields>
+        <fields>CreatedDate</fields>
+        <fields>Created_By__c</fields>
+        <fields>Experience_Band__c</fields>
+        <fields>Experience_Description__c</fields>
+        <fields>Horizontal__c</fields>
+        <fields>Id</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>Last_Modified_By__c</fields>
+        <fields>Skill_Type_Category__c</fields>
+        <fields>TrackingID__c</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>avijit.das2@cognizant.com.prod</integrationUser>
+        <name>Skill Mapping Repository Outbound</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>true</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Skill Mapping Repository Creation and Update Publish To CRS</fullName>
+        <actions>
+            <name>Skill_Mapping_Repository_Outbound</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <formula>OR( ISNEW(),  ISCHANGED(Billing_Role_ID__c), ISCHANGED( Horizontal__c ), ISCHANGED( Experience_Band__c ), ISCHANGED( Experience_Description__c ), ISCHANGED( Billing_Role__c ), ISCHANGED( Skill_Type_Category__c ), ISCHANGED( Billing_role_to_CCA_mapping__c ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

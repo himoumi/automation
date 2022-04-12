@@ -1,0 +1,14 @@
+Id,Name,ccSPGAddresses__c,toSPGAddresses__c
+a4l3k000001VYjoAAG,EMEA,,"stephen.ball@example.com, christian.jansen@example.com, timo.klein@example.com, raghu.kerakatty@example.com, hakon.lundberg@example.com, nicholas.halliwell@example.com"
+a4l3k000001VYjpAAG,APAC,,"deepak.rawat4@example.com, debarati-3.mitra-3@example.com, grace.ng@example.com, mark.avison@example.com, hari.menon@example.com"
+a4l3k000001VYjqAAG,Google,vrinda.malhotra@example.com,"zeeshan.subzwari@example.com, sangeetha.v2@example.com"
+a4l3k000001VYjrAAG,ServiceNow,amrit.pejawar@example.com,"andrew.mccallen@example.com, brian.delarber@example.com"
+a4l3k000001VYjsAAG,Oracle,amrit.pejawar@example.com,"deborah.cohen@example.com, ronita.banerjee@example.com"
+a4l3k000001VYjtAAG,Microsoft,vrinda.malhotra@example.com,"neha.bararia@example.com, kirsten.standen@example.com, jay.cherrington@example.com, sayee.challapally@example.com, abhishek-43.kumar-43@example.com, lori.borg@example.com"
+a4l3k000001VYjuAAG,Cisco,joseph.songate@example.com,"katherine.meints@example.com, bettina.raymond@example.com, rosemarie.jabri@example.com"
+a4l3k000001VYjvAAG,AWS,joseph.songate@example.com,"viveck.parekh@example.com, hillary.munsch@example.com, melba.dance@example.com, nicholas.horvath@example.com"
+a4l3k000001VYjwAAG,IBM,joseph.songate@example.com,"ashutosh.khare@example.com, ian.mcmaster@example.com"
+a4l3k000001VYjxAAG,Adobe,amrit.pejawar@example.com,robert.mayer@example.com
+a4l3k000001VYjyAAG,Salesforce,amrit.pejawar@example.com,"matt.archibald@example.com, todd.mathews@example.com"
+a4l3k000001VYjzAAG,Dell/Vmware,joseph.songate@example.com,"anshul.chandra@example.com, melissa.yonge-smith@example.com"
+a4l3k000001VYk0AAG,SAP,amrit.pejawar@example.com,lauren.baldau@example.com

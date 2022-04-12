@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <outboundMessages>
+        <fullName>Project_Outbound_Message</fullName>
+        <apiVersion>36.0</apiVersion>
+        <description>This is the outbound message for the Project Outbound message for non renewal of the project</description>
+        <endpointUrl>https://www.cognizant.com</endpointUrl>
+        <fields>Account_ID__c</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>Customer_ID__c</fields>
+        <fields>Description__c</fields>
+        <fields>Do_Not_Renew__c</fields>
+        <fields>End_Date__c</fields>
+        <fields>Id</fields>
+        <fields>LastModifiedById</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>Name</fields>
+        <fields>Opportunity_ID__c</fields>
+        <fields>Opportunity__c</fields>
+        <fields>OwnerId</fields>
+        <fields>Project_Billability_type__c</fields>
+        <fields>Project_Category__c</fields>
+        <fields>Project_ID__c</fields>
+        <fields>Project_Type__c</fields>
+        <fields>Project_manager__c</fields>
+        <fields>Project_manager_id__c</fields>
+        <fields>Project_status__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>TrackingID__c</fields>
+        <fields>Vertical__c</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>winzoneadmin@cognizant.com</integrationUser>
+        <name>Project Outbound Message</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Do Not Renew Project</fullName>
+        <actions>
+            <name>Project_Outbound_Message</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <description>This workflow sends outbound message in case , the Do Not Renew Check box is toggled from either False to True, or True to False</description>
+        <formula>AND($Profile.Name &lt;&gt; &quot;Integration User&quot;,     ISCHANGED(Do_Not_Renew__c)     )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

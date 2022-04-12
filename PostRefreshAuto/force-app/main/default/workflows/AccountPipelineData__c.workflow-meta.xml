@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <outboundMessages>
+        <fullName>Account_Pipeline_Data_Outbound_Message</fullName>
+        <apiVersion>44.0</apiVersion>
+        <endpointUrl>https://www.cognizant.com</endpointUrl>
+        <fields>Account__c</fields>
+        <fields>CY_Qualified_Pipeline_Total__c</fields>
+        <fields>CY_Qualified_Pipeline_less15M_MostLikely__c</fields>
+        <fields>CY_Qualified_Pipeline_less_15M_Excluded__c</fields>
+        <fields>CY_Qualified_Pipeline_less_15M_Upside__c</fields>
+        <fields>CY_Qualified_Pipeline_less_15Mn__c</fields>
+        <fields>CY_Qualified_Pipeline_more15M_MostLikely__c</fields>
+        <fields>CY_Qualified_Pipeline_more_15M_Excluded__c</fields>
+        <fields>CY_Qualified_Pipeline_more_15M_Upside__c</fields>
+        <fields>CY_Qualified_Pipeline_more_15Mn__c</fields>
+        <fields>CY_Unqualified_Pipeline_Incremental__c</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>Id</fields>
+        <fields>Imported_Date__c</fields>
+        <fields>LastModifiedById</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>Name</fields>
+        <fields>Period__c</fields>
+        <fields>TrackingId__c</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>avijit.das2@cognizant.com.prod</integrationUser>
+        <name>Account Pipeline Data Outbound Message</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Account Pipeline Data Publish to CRS</fullName>
+        <actions>
+            <name>Account_Pipeline_Data_Outbound_Message</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>User.IsActive</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>notEqual</operation>
+            <value>Integration User</value>
+        </criteriaItems>
+        <description>Data to be pushed to CRS System every time record is edited or a new one is created</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

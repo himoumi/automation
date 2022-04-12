@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    <alerts>
+        <fullName>WinWire_Creation_Email_Alert_to_Sales_User</fullName>
+        <ccEmails>test123@cognizant.com</ccEmails>
+        <description>WinWire Creation Email Alert to Sales User</description>
+        <protected>false</protected>
+        <recipients>
+            <field>opp_Owner_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Win_Wire/WinWire_Email_for_Completing_the_ppt_attachment_V2</template>
+    </alerts>
+    
+    <outboundMessages>
+        <fullName>Win_Wire_Outbound_Message</fullName>
+        <apiVersion>36.0</apiVersion>
+        <description>This is for the outbound for the Win wire functionality</description>
+        <endpointUrl>https://www.cognizant.com</endpointUrl>
+        <fields>Account__c</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>Explanation__c</fields>
+        <fields>Id</fields>
+        <fields>LastModifiedById</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>Name</fields>
+        <fields>Opportunity_Name__c</fields>
+        <fields>Opportunity__c</fields>
+        <fields>OwnerId</fields>
+        <fields>Qualifying_criteria__c</fields>
+        <fields>Sales_Person_Email__c</fields>
+        <fields>Sales_Person_Phone__c</fields>
+        <fields>Sales_Person__c</fields>
+        <fields>TrackingID__c</fields>
+        <fields>Win_Wire_Status__c</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>winzoneadmin@cognizant.com</integrationUser>
+        <name>Win Wire Outbound Message</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Win Wire CRS Publish</fullName>
+        <actions>
+            <name>Win_Wire_Outbound_Message</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Win_Wire__c.Win_Wire_Status__c</field>
+            <operation>equals</operation>
+            <value>Win Wire Criteria Not Satisfied,Win Wire Criteria Satisfied,Win Wire Request Submitted,Win Wire Request Approved,Win Wire Request Rejected,Win Wire Published,Win Wire Sent to Repository,Submit for Approval</value>
+        </criteriaItems>
+        <description>This workflow is used to publish the Win Wire result to CRS</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    
+</Workflow>

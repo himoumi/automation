@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>PackageCreatorController</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>ComponentSelector</members>
+        <members>PackageXmlViewer</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>Package_Creator</members>
+        <name>CustomTab</name>
+    </types>
+	<types>
+        <members>PackageXMLStorage</members>
+        <name>PlatformCachePartition</name>
+    </types>
+    <types>
+        <members>CoreAPIJsForce</members>
+        <members>MetadataAPIJsForce</members>
+        <members>MetadataJSON</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
+		<members>WZ_MKT_DefaultTaskOwner</members>
+        <members>Notify_Owner_Email</members>
+        <members>CRS_WebService_EndPoint_URL</members>
+        <members>LMM_Admin</members>
+        <members>EmailNotificationBaseURL</members>
+        <members>NominateForEventURL</members>
+        <members>FailedOpliRecipientList</members>
+        <members>DHC_Sales_Lead_NA</members>
+		<members>Deal_Review_Folder_Id</members>
+		<members>CxBaseURL</members>
+        <name>CustomLabel</name>
+	</types>
+    <types>
+        <members>Account_Action_Plan__c.Redirection_link_to_Cx__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>*</members>
+		<name>Workflow</name>
+	</types>
+    <types>
+        <members>Account.Account_Outbound_Message</members>
+        <members>AccountContactRelation.AccountContactRelation_Outbound_Message</members>
+        <members>AccountPipelineData__c.Account_Pipeline_Data_Outbound_Message</members>
+        <members>Account_Segmentation_Mapping__c.Account_Segmentation_Outbound_Message</members>
+        <members>Account_Team__c.Account_Team_Outbound_Message</members>
+        <members>Contact.Contact_Outbound_Message</members>
+        <members>External_Benchmark_Repository__c.External_Bench_Mark_Repository_Outbound</members>
+        <members>Financial_Ultimate_Parent_Account__c.Financial_Account_Outbound_Message</members>
+        <members>Forecast__c.Forecast_Outbound</members>
+        <members>Integrated_Topsheet_Data__c.IntegratedTopsheet_Data_Outbound_Message</members>
+        <members>Master_Bench_Mark_Repository__c.Master_Bench_Mark_Repository_Outbound</members>
+        <members>Opportunity.Opportunity_Outbound_Message</members>
+        <members>Opportunity_Closure__c.Opportunity_Closure_Outbound_Message</members>
+        <members>Opportunity_Service_Line_Item__c.Opportunity_Service_Line_Item_Outbound</members>
+        <members>Opportunity_Team__c.OpportunityTeam_Outbound</members>
+        <members>PRAssessment__c.PRAssessment_Outbound_Message</members>
+        <members>PRQuestionnaire__c.PRQuestionnaire_Outbound_Message</members>
+        <members>Product2.Product_Outbound_Message</members>
+        <members>Project_Date_Change__c.Project_Date_Change_Outbound_Message</members>
+        <members>Project__c.Project_Outbound_Message</members>
+        <members>Renewal_Expansion_Projects__c.Renewal_Expansion_Projects_Outbound</members>
+        <members>Skill_Mapping_Repository__c.Skill_Mapping_Repository_Outbound</members>
+        <members>Win_Wire__c.Win_Wire_Outbound_Message</members>
+		<!--
+        <members>bsource__BS_Deal_Support_Request__c.DSR_OM_cognizant</members>
+        <members>oo__Player__c.OO_Player_Outbound_Message</members>-->
+        <name>WorkflowOutboundMessage</name>
+    </types>
+    <types>
+        <members>Account.Account Creation and Update Publish to CRS</members>
+        <members>AccountPipelineData__c.Account Pipeline Data Publish to CRS</members>
+        <members>Account_Segmentation_Mapping__c.Account Segmentation Mapping Creation and Update Publish To CRS</members>
+        <members>Account_Team__c.Account Team Publish To CRS</members>
+        <members>AccountContactRelation.Account Contact Relationship Data Publish to CRS</members>
+        <members>Contact.Contact Publish To CRS</members>
+        <members>External_Benchmark_Repository__c.External  Benchmark Repository Creation and Update Publish To CRS</members>
+        <members>Financial_Ultimate_Parent_Account__c.Financial Account Publish To CRS</members>
+        <members>Forecast__c.Forecast Publish</members>
+        <members>Master_Bench_Mark_Repository__c.Master Benchmark Repository Creation and Update Publish To CRS</members>
+        <!--<members>oo__Player__c.OO - Player Stage Equals To 3. Solutioning</members>-->
+        <members>Opportunity_Closure__c.Opportunity Closure</members>
+        <members>Opportunity.Opportunity Stage changes to Closed</members>
+        <members>Opportunity.Opportunity Creation and Update Publish to CRS</members>
+        <members>Opportunity_Service_Line_Item__c.Opportunity Service Line Item above and equal Solutioning</members>
+        <members>Opportunity_Team__c.Opportunity Team Stage 3 Publish</members>
+        <members>PRAssessment__c.PRAssessment Publish</members>
+        <members>Product2.Product Creation and Update Publish To CRS</members>
+        <members>Project_Date_Change__c.Project Date Change On Creation</members>
+        <members>Project__c.Do Not Renew Project</members>
+        <members>PRQuestionnaire__c.PRQuestionnaire Publish</members>
+        <members>Renewal_Expansion_Projects__c.Renewal_Expansion_Projects_Publish_To_CRS</members>
+        <members>Skill_Mapping_Repository__c.Skill Mapping Repository Creation and Update Publish To CRS</members>
+        <members>Win_Wire__c.Win Wire CRS Publish</members>
+        <members>Integrated_Topsheet_Data__c.Integrated Topsheet Data Publish to CRS</members>
+        <name>WorkflowRule</name>
+    </types>
+    <types>
+        <members>Account.Update_DMG_CDMG_Email_Id</members>
+        <name>WorkflowFieldUpdate</name>
+    </types>
+    <types>
+        <members>Account.Account_Creation_Email_notification</members>
+        <members>Account_Request__c.Account_updation_request</members>
+        <members>Account_Request__c.Account_Approved_by_CDMG_Team</members>
+        <members>Account_Request__c.Account_Approved_by_DMG_Team</members>
+        <members>Account_Request__c.Account_Rejected_by_CDMG_Team</members>
+        <members>Account_Request__c.Account_Rejected_by_DMG_Team</members>
+        <members>Opportunity.CDMG_Team_reminder_verification_Email</members>
+        <members>Opportunity.Opportunity_Won_TCV_500000</members>
+        <!--members>Opportunity.Strategic_Email_for_APAC</members>
+        <members>Opportunity.Strategic_Email_for_Switzerland</members>
+        <members>Opportunity.Strategic_Email_for_UK_Comm</members>
+        <members>Opportunity.Strategic_CAT1_Email_for_BFS</members-->
+        <members>Win_Wire__c.WinWire_Creation_Email_Alert_to_Sales_User</members>
+		<members>Account.Account_create_update_for_Risk_Countries</members>
+        <name>WorkflowAlert</name>
+    </types>
+    <version>50.0</version>
+</Package>

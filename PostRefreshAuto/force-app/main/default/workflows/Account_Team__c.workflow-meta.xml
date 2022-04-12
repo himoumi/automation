@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <outboundMessages>
+        <fullName>Account_Team_Outbound_Message</fullName>
+        <apiVersion>40.0</apiVersion>
+        <description>Outbound Message Triggered When Last Modified User Is Not an Integration User.</description>
+        <endpointUrl>https://www.cognizant.com</endpointUrl>
+        <fields>Account_Access__c</fields>
+        <fields>Account__c</fields>
+        <fields>Case_Access__c</fields>
+        <fields>Contact_Access__c</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>Employee_Number__c</fields>
+        <fields>End_Month_Year__c</fields>
+        <fields>Id</fields>
+        <fields>LastModifiedById</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>Opportunity_Access__c</fields>
+        <fields>Ownership__c</fields>
+        <fields>RHMS_Approval_Comment__c</fields>
+        <fields>RHMS_Approval_Status__c</fields>
+        <fields>Start_Month_Year__c</fields>
+        <fields>Status__c</fields>
+        <fields>Team_Member_Email__c</fields>
+        <fields>Team_Role__c</fields>
+        <fields>TrackingID__c</fields>
+        <fields>Unique_Identifier__c</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>winzoneadmin@cognizant.com</integrationUser>
+        <name>Account Team Outbound Message</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Account Team Publish To CRS</fullName>
+        <actions>
+            <name>Account_Team_Outbound_Message</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <description>This workflow is used for sending the Account Team data to the CRS.</description>
+        <formula>AND
+(
+ 		OR
+ 		(
+ 			ISPICKVAL(Team_Role__c, &apos;Engagement Partner&apos;),
+ 			ISPICKVAL(Team_Role__c, &apos;Client Service Executive&apos;),
+ 			ISPICKVAL(Team_Role__c, &apos;Client Partner&apos;),
+ 			ISPICKVAL(Team_Role__c, &apos;Delivery Partner&apos;),
+ 			ISPICKVAL(Team_Role__c, &apos;Client Relationship Manager&apos;),
+ 			ISPICKVAL(Team_Role__c, &apos;Service Line Specialist&apos;),
+ 			ISPICKVAL(Team_Role__c, &apos;Account Executive&apos;),
+ 			ISPICKVAL(Team_Role__c, &apos;Sales Director&apos;),
+ 			ISPICKVAL(Team_Role__c, &apos;Service Line Sales Manager&apos;),
+ 			ISPICKVAL(Team_Role__c, &apos;Service Line Sales Leader&apos;)
+                ),
+ 		ISPICKVAL(Approval_Status__c, &apos;Approved&apos;),
+ 		ISPICKVAL(RHMS_Approval_Status__c, &apos;Approved&apos;),
+ 		Account__r.RecordType.DeveloperName = &apos;Approved_Account&apos;
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

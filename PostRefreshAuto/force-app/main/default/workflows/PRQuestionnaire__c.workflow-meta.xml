@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <outboundMessages>
+        <fullName>PRQuestionnaire_Outbound_Message</fullName>
+        <apiVersion>36.0</apiVersion>
+        <description>This outbound message is for the PR Questionnaire Outbound Message</description>
+        <endpointUrl>https://www.cognizant.com</endpointUrl>
+        <fields>Applicable_To__c</fields>
+        <fields>Complexity_Indicator__c</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>Dimension__c</fields>
+        <fields>Id</fields>
+        <fields>Is_Active__c</fields>
+        <fields>Is_Blocker__c</fields>
+        <fields>Is_Dimension__c</fields>
+        <fields>LastModifiedById</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>Name</fields>
+        <fields>OwnerId</fields>
+        <fields>Ques__c</fields>
+        <fields>Score_Defn__c</fields>
+        <fields>Seq_no__c</fields>
+        <fields>Service_Line__c</fields>
+        <fields>TrackingID__c</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>winzoneadmin@cognizant.com</integrationUser>
+        <name>PRQuestionnaire Outbound Message</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>PRQuestionnaire Publish</fullName>
+        <actions>
+            <name>PRQuestionnaire_Outbound_Message</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>User.IsActive</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>PRQuestionnaire__c.Is_Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>This workflow is used for sending the PR Question to the CRS once the question is saved in the system</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

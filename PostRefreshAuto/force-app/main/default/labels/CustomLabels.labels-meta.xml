@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>CRS_WebService_EndPoint_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CRS_WebService_EndPoint_URL</shortDescription>
+        <value>www.cognizant.com</value>
+    </labels>
+    <labels>
+        <fullName>DHC_Sales_Lead_NA</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DHC Sales Lead NA</shortDescription>
+        <value>Akarsh.Gupta@cognizant.com</value>
+    </labels>
+    <labels>
+        <fullName>EmailNotificationBaseURL</fullName>
+        <categories>PRA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailNotificationBaseURL</shortDescription>
+        <value>https://cognizant--wzrefpro.my.salesforce.com/</value>
+    </labels>
+    <labels>
+        <fullName>NominateForEventURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NominateForEventURL</shortDescription>
+        <value>https://cognizant--wzrefpro--c.visualforce.com</value>
+    </labels>
+    <labels>
+        <fullName>FailedOpliRecipientList</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FailedOpliRecipientList</shortDescription>
+        <value>Akarsh.Gupta@cognizant.com</value>
+    </labels>
+	<labels>
+        <fullName>Deal_Review_Folder_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Deal_Review_Folder_Id</shortDescription>
+        <value>20HyOM01D39U</value>
+    </labels>
+    <labels>
+        <fullName>LMM_Admin</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LMM Admin</shortDescription>
+        <value>rebecca.mazur@cognizant.com;pam.courtney@cognizant.com;alexia.strang-wolf@cognizant.com;kishi.dickinson@cognizant.com;Claire.Gowdey@cognizant.com;Traci.MacRae@cognizant.com;Katherine.Calvert@cognizant.com;John.Teo@cognizant.com;James.Gray@cognizant.com;SyedShaheel.Malik@cognizant.com;Kishan.Dave@cognizant.com;Marlo.Ellis@cognizant.com;Sejal.Malieckal@cognizant.com;Alexandra.Pyke@cognizant.com;beata.ogorzala@cognizant.com;Florence.Holdeman@cognizant.com;Terri.Scheer@cognizant.com;Ashley.Fredericks@cognizant.com;Jennifer.Fenimore@cognizant.com;Barbara.Siminerio@cognizant.com;</value>
+    </labels>
+    <labels>
+        <fullName>Notify_Owner_Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Notify_Owner_SFDCID</shortDescription>
+        <value>0053k00000B8OuXAAV</value>
+    </labels>
+    <labels>
+        <fullName>WZ_MKT_DefaultTaskOwner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WZ_MKT_DefaultTaskOwner</shortDescription>
+        <value>CPardotWZConnectNP@cognizant.com</value>
+    </labels>
+	<labels>
+        <fullName>CxBaseURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Base URL to connect CX</shortDescription>
+        <value>https://onecsitazrbcapps.cognizant.com/2698/CreateSurveyActionPlan.aspx?</value>
+    </labels>
+</CustomLabels>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
